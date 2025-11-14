@@ -2,4 +2,9 @@ Category,Cost
 Accommodation, 674.56
 Transportation, 2301.00
 Meals, 267.89
-Misc., 34.50   
+Misc., 34.50
+Entertaiment, 474.56
+Education, 301.00
+Investments, 1267.89
+Clothing, 114.50
+Health, 55.70

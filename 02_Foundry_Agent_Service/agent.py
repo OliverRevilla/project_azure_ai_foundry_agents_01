@@ -4,8 +4,12 @@ from typing import Any
 from pathlib import Path
 from azure.identity import DefaultAzureCredential
 from azure.ai.agents import AgentsClient
-from azure.ai.agents.models import FilePurpose, CodeInterpreterTool, ListSortOrder, MessageRole
-
+from azure.ai.agents.models import (
+    FilePurpose, 
+    CodeInterpreterTool, 
+    ListSortOrder, 
+    MessageRole
+)
 
 def main(): 
 
@@ -20,9 +24,16 @@ def main():
     # Display the data to be analyzed
     script_dir = Path(__file__).parent  # Get the directory of the script
     file_path = script_dir / 'data.txt'
+    instructions_path = script_dir / 'instructions.txt'
 
-    with file_path.open('r') as file:
-        data = file.read() + "\n"
+    with open(instructions_path, 'r') as file:
+        INSTRUCTIONS = file.read()
+
+    with open(file_path, 'r') as data_file:
+        data_content = data_file.read()
+        print("Data to be analyzed:\n")
+        print(data_content)
+        print("\n")
 
     # Connect to the Agent client
     agent_client = AgentsClient(
@@ -47,11 +58,9 @@ def main():
         agent = agent_client.create_agent(
             model=model_deployment,
             name="data-agent",
-            instructions="""You are an AI agent that analyzes the data
-            in the file that has been uploaded. Use Python to calculate
-            statistical metrics as necessary.""",
+            instructions=INSTRUCTIONS,
             tools=code_interpreter.definitions,
-            tool_resources=code_interpreter.resources,
+            tool_resources=code_interpreter.resources
         )
         
         print(f"Using agent: {agent.name}")
@@ -93,7 +102,10 @@ def main():
 
         # Get the conversation history
         print("\nConversation Log:\n")
-        messages = agent_client.messages.list(thread_id=thread.id, order=ListSortOrder.ASCENDING)
+        messages = agent_client.messages.list(
+            thread_id=thread.id, 
+            order=ListSortOrder.ASCENDING
+        )
         for message in messages:
             if message.text_messages:
                 last_msg = message.text_messages[-1]
