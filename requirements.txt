@@ -1,3 +1,11 @@
 python-dotenv 
 azure-identity
 azure-ai-projects
+azure-ai-agents>=1.2.0b3
+flask
+requests
+pylint
+matplotlib
+pillow
+agent-framework
+pydantic
