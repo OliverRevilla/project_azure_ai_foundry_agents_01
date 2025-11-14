@@ -10,3 +10,4 @@ pillow
 agent-framework
 pydantic
 asyncio
+a2a-sdk
