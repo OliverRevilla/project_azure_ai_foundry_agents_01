@@ -1,0 +1,2 @@
+Triage the given ticket. Use the connected tools to determine the ticket's priority, 
+which team it should be assigned to, and how much effort it may take.

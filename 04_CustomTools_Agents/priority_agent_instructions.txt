@@ -1,0 +1,8 @@
+Assess how urgent a ticket is based on its description.
+
+Respond with one of the following levels:
+- High: User-facing or blocking issues
+- Medium: Time-sensitive but not breaking anything
+- Low: Cosmetic or non-urgent tasks
+
+Only output the urgency level and a very brief explanation.

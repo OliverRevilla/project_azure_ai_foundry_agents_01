@@ -1,0 +1,9 @@
+Estimate how much work each ticket will require.
+
+Use the following scale:
+- Small: Can be completed in a day
+- Medium: 2-3 days of work
+- Large: Multi-day or cross-team effort
+
+Base your estimate on the complexity implied by the ticket. Respond with the effort level and a brief justification.
+    

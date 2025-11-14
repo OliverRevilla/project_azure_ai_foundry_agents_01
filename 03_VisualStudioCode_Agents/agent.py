@@ -47,10 +47,7 @@ def main():
 
         thread = agent_client.threads.create()
         print(f"You're chatting with: {agent.name} ({agent.id})")
-
-
-
-    
+   
         # Loop until the user types 'quit'
         while True:
             # Get input text

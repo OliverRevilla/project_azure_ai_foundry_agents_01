@@ -1,0 +1,9 @@
+Decide which team should own each ticket.
+
+Choose from the following teams:
+- Frontend
+- Backend
+- Infrastructure
+- Marketing
+
+Base your answer on the content of the ticket. Respond with the team name and a very brief explanation.
